@@ -1,0 +1,239 @@
+{
+  "functions": {
+    "api/*.js": {
+      "includeFiles": "api/_data/**",
+      "maxDuration": 10
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; base-uri 'self'; object-src 'none'; frame-ancestors 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/admin.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/admin.html"
+    },
+    {
+      "source": "/campus-ambassador-track",
+      "destination": "/campus-ambassador-track.html"
+    },
+    {
+      "source": "/cancellation-policy",
+      "destination": "/cancellation-policy.html"
+    },
+    {
+      "source": "/career-policy",
+      "destination": "/career-policy.html"
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html"
+    },
+    {
+      "source": "/certificate-policy",
+      "destination": "/certificate-policy.html"
+    },
+    {
+      "source": "/child-safety-policy",
+      "destination": "/child-safety-policy.html"
+    },
+    {
+      "source": "/code-of-conduct",
+      "destination": "/code-of-conduct.html"
+    },
+    {
+      "source": "/collaboration-policy",
+      "destination": "/collaboration-policy.html"
+    },
+    {
+      "source": "/collaborations",
+      "destination": "/collaborations.html"
+    },
+    {
+      "source": "/college-collaboration",
+      "destination": "/college-collaboration.html"
+    },
+    {
+      "source": "/contact-grievance-policy",
+      "destination": "/contact-grievance-policy.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/data-usage-policy",
+      "destination": "/data-usage-policy.html"
+    },
+    {
+      "source": "/disclaimer",
+      "destination": "/disclaimer.html"
+    },
+    {
+      "source": "/incentive-policy",
+      "destination": "/incentive-policy.html"
+    },
+    {
+      "source": "/institutional-collaboration",
+      "destination": "/institutional-collaboration.html"
+    },
+    {
+      "source": "/intellectual-property-policy",
+      "destination": "/intellectual-property-policy.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/login.html"
+    },
+    {
+      "source": "/news-blogs",
+      "destination": "/news-blogs.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy.html"
+    },
+    {
+      "source": "/programs-services",
+      "destination": "/programs-services.html"
+    },
+    {
+      "source": "/refund-policy",
+      "destination": "/refund-policy.html"
+    },
+    {
+      "source": "/school-collaboration",
+      "destination": "/school-collaboration.html"
+    },
+    {
+      "source": "/student-contributor-track",
+      "destination": "/student-contributor-track.html"
+    },
+    {
+      "source": "/success",
+      "destination": "/success.html"
+    },
+    {
+      "source": "/terms-conditions",
+      "destination": "/terms-conditions.html"
+    },
+    {
+      "source": "/trainer-track",
+      "destination": "/trainer-track.html"
+    },
+    {
+      "source": "/programs/ai-machine-learning",
+      "destination": "/programs/ai-machine-learning.html"
+    },
+    {
+      "source": "/programs/app-development",
+      "destination": "/programs/app-development.html"
+    },
+    {
+      "source": "/programs/cloud-computing",
+      "destination": "/programs/cloud-computing.html"
+    },
+    {
+      "source": "/programs/conference-publication-support",
+      "destination": "/programs/conference-publication-support.html"
+    },
+    {
+      "source": "/programs/cyber-security",
+      "destination": "/programs/cyber-security.html"
+    },
+    {
+      "source": "/programs/data-science",
+      "destination": "/programs/data-science.html"
+    },
+    {
+      "source": "/programs/full-stack-development",
+      "destination": "/programs/full-stack-development.html"
+    },
+    {
+      "source": "/programs/innovation-consulting",
+      "destination": "/programs/innovation-consulting.html"
+    },
+    {
+      "source": "/programs/iot",
+      "destination": "/programs/iot.html"
+    },
+    {
+      "source": "/programs/journal-publication-support",
+      "destination": "/programs/journal-publication-support.html"
+    },
+    {
+      "source": "/programs/patent-support",
+      "destination": "/programs/patent-support.html"
+    },
+    {
+      "source": "/programs/professional-development",
+      "destination": "/programs/professional-development.html"
+    },
+    {
+      "source": "/programs/research-methodology",
+      "destination": "/programs/research-methodology.html"
+    },
+    {
+      "source": "/programs/ui-ux-design",
+      "destination": "/programs/ui-ux-design.html"
+    },
+    {
+      "source": "/programs/web-development",
+      "destination": "/programs/web-development.html"
+    }
+  ]
+}

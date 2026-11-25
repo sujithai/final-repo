@@ -1,0 +1,22 @@
+{
+  "name": "SCIENWAVE TECHNOLOGIES",
+  "short_name": "SCIENWAVE",
+  "description": "Skill up. Stand out. Succeed.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf0",
+  "theme_color": "#112e4c",
+  "icons": [
+    {
+      "src": "assets/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

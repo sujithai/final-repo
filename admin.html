@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>Admin | SCIENWAVE TECHNOLOGIES</title><meta name="robots" content="noindex,nofollow"/><link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png"/><meta name="theme-color" content="#112e4c"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&amp;family=Inter:wght@400;500;700;800;900&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/><link href="assets/styles.css?v=4" rel="stylesheet"/></head>
+<body class="admin-body"><main id="main">
+<section class="admin-login" id="loginView"><div class="admin-card"><img src="assets/scienwave-logo-clean.png" alt="SCIENWAVE TECHNOLOGIES" width="150"/><div class="kicker">Admin portal</div><h1>Sign in</h1><p class="admin-muted">Authorised SCIENWAVE staff only.</p>
+<form id="loginForm" autocomplete="off"><label for="pw">Admin password</label><input id="pw" type="password" required autocomplete="current-password"/><button class="btn primary" type="submit">Sign in</button><p class="form-status" id="loginMsg" role="alert"></p></form></div></section>
+
+<section class="admin-app" id="appView" hidden>
+<header class="admin-top"><div><div class="kicker">SCIENWAVE admin</div><h1>Control panel</h1></div><div class="admin-actions"><a class="btn" href="index.html">View site</a><button class="btn" id="refreshBtn" type="button">Refresh</button><button class="btn" id="logoutBtn" type="button">Sign out</button></div></header>
+<p class="admin-note" id="storeNote" hidden></p>
+<nav class="admin-tabs" role="tablist" aria-label="Admin sections"><button type="button" role="tab" class="on" data-tab="dash">Dashboard</button><button type="button" role="tab" data-tab="inq">Inquiries <span class="badge" id="newBadge" hidden></span></button><button type="button" role="tab" data-tab="certs">Certificates</button></nav>
+
+<div class="admin-pane" id="pane-dash">
+<div class="stat-grid" id="stats"></div>
+<div class="admin-grid2"><div class="admin-card"><h2>Inquiries, last 7 days</h2><div class="bars" id="weekBars"></div></div><div class="admin-card"><h2>Inquiries by form</h2><div class="hbars" id="typeBars"></div></div></div>
+</div>
+
+<div class="admin-pane" id="pane-inq" hidden>
+<div class="admin-card"><div class="admin-bar"><h2>Inquiry inbox <span id="inqCount"></span></h2><div class="admin-tools"><select id="inqFilter" aria-label="Filter by status"><option value="all">All</option><option value="new">New</option><option value="contacted">Contacted</option><option value="closed">Closed</option></select><input id="inqSearch" type="search" placeholder="Search name, phone, email, message" aria-label="Search inquiries"/><button class="btn" id="inqExport" type="button">Export CSV</button></div></div><div id="inqList"></div></div>
+</div>
+
+<div class="admin-pane" id="pane-certs" hidden>
+<div class="admin-grid"><div class="admin-stack">
+<div class="admin-card"><h2 id="formTitle">Add certificate record</h2><p class="admin-muted">Students verify with Reference ID + full name.</p>
+<form id="addForm" class="admin-form"><input type="hidden" name="key" id="editKey"/><label>Reference ID<input name="ref" placeholder="SWT-AI-011" required/></label><label>Full name (as printed)<input name="name" required/></label><label>Program / workshop<input name="program" required/></label><label>Role<input name="role" value="Participant"/></label><label>Period / date<input name="period" placeholder="03 June 2026 to 02 July 2026"/></label><label>Issued on<input name="issued" placeholder="03 July, 2026"/></label><button class="btn primary" type="submit" id="saveBtn">Add record</button><button class="btn" type="button" id="cancelEdit" hidden>Cancel edit</button><p class="form-status" id="addMsg" role="status"></p></form></div>
+<div class="admin-card"><h2>Bulk upload</h2><p class="admin-muted">Paste rows from Excel or Google Sheets, or choose a CSV file. Columns: ref, name, program, role, period, issued.</p>
+<textarea id="bulkText" rows="6" placeholder="SWT-AI-011, Anita Kumar, AI Internship, Participant, June 2026, 03 July 2026"></textarea>
+<div class="admin-row"><input type="file" id="bulkFile" accept=".csv,.txt,text/csv" aria-label="Choose CSV file"/><button class="btn" id="tplBtn" type="button">Download template</button></div>
+<button class="btn primary" id="bulkBtn" type="button">Upload records</button><p class="form-status" id="bulkMsg" role="status"></p></div></div>
+<div class="admin-card admin-wide"><div class="admin-bar"><h2>Records <span id="count"></span></h2><div class="admin-tools"><input id="filter" type="search" placeholder="Search name, ID, program" aria-label="Search records"/><button class="btn" id="certExport" type="button">Export CSV</button></div></div><div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Ref ID</th><th>Name</th><th>Program</th><th>Issued</th><th>Status</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div></div>
+</div>
+</section>
+</main><script src="assets/admin.js?v=4"></script></body></html>
